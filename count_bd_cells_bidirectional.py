@@ -1,7 +1,7 @@
 #### Latest Update: 05/03/23 MJL
 #### Power analysis simulator for XA and AA, two-locus recessive incompatibilities
-#### Currently scripted to work with a 25% Penetrance of BDMI locus
-#### Requires input have calls in order X -> Autosome
+#### Assumes 25% Penetrance of BDMI locus
+#### Requires input have calls in ordered X,2L,2R,3L,3R
 
 ### Required Python libraries
 import argparse
