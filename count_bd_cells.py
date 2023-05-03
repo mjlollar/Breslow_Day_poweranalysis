@@ -139,7 +139,6 @@ def null_test(s_id, f_id, test):
 
 	#Forward count
 	for window_1 in len_1:
-		print(str(1))
 		for window_2 in len_2:
 			b1 = 0
 			b3 = 0
@@ -161,7 +160,6 @@ def null_test(s_id, f_id, test):
 			bd_5.append(b5)
 			bd_7.append(b7)
 	for window_1 in len_1:
-		print(str(2))
 		for window_2 in len_2:
 			b2 = 0
 			b4 = 0
@@ -184,7 +182,6 @@ def null_test(s_id, f_id, test):
 			bd_8.append(b8)
 	##Reverse Count
 	for window_1 in len_2:
-		print(str(3))
 		for window_2 in len_1:
 			b1 = 0
 			b3 = 0
@@ -206,7 +203,6 @@ def null_test(s_id, f_id, test):
 			bd_5.append(b5)
 			bd_7.append(b7)
 	for window_1 in len_2:
-		print(str(4))
 		for window_2 in len_1:
 			b2 = 0
 			b4 = 0
@@ -230,7 +226,6 @@ def null_test(s_id, f_id, test):
 	assert len(bd_1) == len(bd_2) == len(bd_3) == len(bd_4) == len(bd_5) == len(bd_6) == len(bd_7) == len(bd_8) # Sanity
 	
 	#Make pandas dataframe of bd values to output
-	print("MARK 1============================")
 	cell_df = pd.DataFrame([bd_1, bd_2, bd_3, bd_4, bd_5, bd_6, bd_7, bd_8])
 	cell_df = cell_df.transpose()
 	cell_df.columns = ['bd1','bd2','bd3','bd4','bd5','bd6','bd7','bd8']
