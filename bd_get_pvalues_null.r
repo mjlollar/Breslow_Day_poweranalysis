@@ -31,7 +31,7 @@ for (i in 1:num_windows){
   odds_four <- ((bd_7) / (bd_7 + bd_8))
   max_odds <- max(c(odds_one, odds_two, odds_three, odds_four))
   if (max_odds %in% c(odds_two, odds_three, odds_four) == TRUE){
-    #Skip calculation if max odds are not odds 1
+    #Skip calculation if max odds are not odds 1 or equal to odds one
     pvalues[i] <- 999
   } else {
     ## Calculate Breslow Day test
