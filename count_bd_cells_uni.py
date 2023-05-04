@@ -113,7 +113,7 @@ def emp_test(s_id, ff_id, fnf_id, test):
 	lister.close()
 
 ### Null test
-def null_test(s_id, f_id, fnf_id, test):
+def null_test(s_id, ff_id, fnf_id, test):
 	### Define chromosome boundaries
 	if test == 'x':
 		window_2 = list(range(0, X_end))
@@ -144,12 +144,12 @@ def null_test(s_id, f_id, fnf_id, test):
 		b7 = 0
 		for index in null_s_id: #Sterile
 			if uni_windows[index] == focal_1: #W1F
-				if df.iat[window_2, index] == focal_2: #W2F
+				if df.iat[window, index] == focal_2: #W2F
 					b1 += 1
 				else: #W2NF
 					b5 += 1
 			else: #W1NF
-				if df.iat[window_2, index] == focal_2: #W2F
+				if df.iat[window, index] == focal_2: #W2F
 					b3 += 1
 				else: #W2NF
 					b7 += 1
@@ -164,12 +164,12 @@ def null_test(s_id, f_id, fnf_id, test):
 		b8 = 0
 		for index in null_f_id: #Fertile
 			if uni_windows[index] == focal_1: #W1F
-				if df.iat[window_2, index] == focal_2: #W2F
+				if df.iat[window, index] == focal_2: #W2F
 					b2 += 1
 				else: #W2NF
 					b6 += 1
 			else: #W1NF
-				if df.iat[window_2, index] == focal_2: #W2F
+				if df.iat[window, index] == focal_2: #W2F
 					b4 += 1
 				else: #W2NF
 					b8 += 1
@@ -191,7 +191,7 @@ def null_test(s_id, f_id, fnf_id, test):
 	cell_df.to_csv(out_name, header=True, index=False)
 
 ### X-Autosome incompatibility testing
-if args.xa == True:
+if args.x == True:
 	print("getting X-uni incompatibility sterile/fertile groups")
 	sterile_ids_X = []
 	fertile_f_ids_X = []
@@ -221,7 +221,7 @@ if args.xa == True:
 							sterile_ids_X.append(i)
 						else:
 							pass
-			 		else:
+					else:
 			 			if len(fertile_f_ids_X) < number_fertile:
 			 				fertile_f_ids_X.append(i)
 			 			else:
@@ -234,9 +234,9 @@ if args.xa == True:
 						pass
 				else:
 					if len(fertile_f_ids_X) < number_fertile:
-					fertile_f_ids_X.append(i)
-				else:
-					pass
+						fertile_f_ids_X.append(i)
+					else:
+						pass
 		else: #W1NF
 			if rd.randrange(0,100) <args.bs:
 				if len(sterile_ids_X) < number_sterile: #BS
@@ -245,9 +245,9 @@ if args.xa == True:
 					pass
 			else:
 				if len(fertile_nf_ids_X) < number_fertile:
-						fertile_nf_ids_X.append(i)
-					else:
-						pass			
+					fertile_nf_ids_X.append(i)
+				else:
+					pass			
 		i = i + 1
 
 	### Call tests
@@ -255,7 +255,7 @@ if args.xa == True:
 	null_test(sterile_ids_X, fertile_f_ids_X, fertile_nf_ids_X, 'x')
 
 ## Autosome-Autosome incompatibility testing
-if args.aa == True:
+if args.a == True:
 	print("getting A-uni incompatibility sterile/fertile groups")
 	sterile_ids_A = []
 	fertile_f_ids_A = []
