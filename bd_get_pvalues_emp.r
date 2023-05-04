@@ -29,7 +29,7 @@ odds_three <- ((bd_5) / (bd_5 + bd_6))
 odds_four <- ((bd_7) / (bd_7 + bd_8))
 max_odds <- max(c(odds_one, odds_two, odds_three, odds_four))
 if (max_odds %in% c(odds_two, odds_three, odds_four) == TRUE){
-  #Skip calculation if max odds are not odds 1
+  #Skip calculation if max odds are not odds 1 or equal to odds 1
   pvalue[1]=999
 } else {
   ## Calculate Breslow Day test
